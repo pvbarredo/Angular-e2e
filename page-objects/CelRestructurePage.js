@@ -1,5 +1,4 @@
-function celRestructurePage(){
-
+var CelRestructurePage = function(){
 	this.serviceItemsSearchCriteria = element(by.model('vm.serviceItem'));
 	this.regionSearchCriteria = element(by.model('vm.region'));
 	this.bkgOfficeSearchCriteria = element(by.model('vm.serviceItem')); 
@@ -27,8 +26,8 @@ function celRestructurePage(){
 	}
 
 
-	
+
 
 }
 
-exports.celRestructurePage = celRestructurePage;
+module.exports = CelRestructurePage;

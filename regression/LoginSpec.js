@@ -4,11 +4,10 @@ var LoginPage = require('../page-objects/LoginPage');
 var config = require('../data/config.js').config();
 
 describe("Login into DOCSOP", function() {
-	
-	it("Check Title", function() {
-		
-		LoginPage.login(config);
+	var loginPage = new LoginPage(config);
 
+	it("Check Title", function() {
+		loginPage.login();
 		expect(browser.getTitle()).toEqual('SOP Automation');
 	});
 

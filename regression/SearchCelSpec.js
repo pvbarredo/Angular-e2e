@@ -1,12 +1,22 @@
 'use strict';
 
-var LoginPage = require('../page-objects/LoginPage');
-var CelRestructurePage = require('../page-objects/CelRestructurePage');
-var config = require('../data/config.js').config();
+var LoginPage = require('../page-objects/LoginPage'),
+	CelRestructurePage = require('../page-objects/CelRestructurePage'),
+	Navigation = require('../page-objects/Navigation'),
+	config = require('../data/config.js').config();
 
 describe("Search CEL", function(){
-	browser.pause();
-	CelRestructurePage.celRestructurePage;
+	var navigation = new Navigation();
+	var celRestructurePage = new CelRestructurePage();
+
+	beforeAll(function(){
+		navigation.gotoCELRestructureViewPage();
+	});
+
+
+    it("test", function(){
+    		
+    })
 
 });
 
