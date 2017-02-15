@@ -1,8 +1,6 @@
-exports.login = login;
-
 function login(config) {
-	
-	jasmine.DEFAULT_TIMEOUT_INTERVAL = config.jasmine_DEFAULT_TIMEOUT_INTERVAL;
+
+	jasmine.DEFAULT_TIMEOUT_INTERVAL = config.jasmine_default_timeout_interval;
 	this.userId = element(by.model('vm.user.domainId'));
 	this.loginButton = element(by.id('supportLoginBtn'));
 
@@ -10,3 +8,5 @@ function login(config) {
 	this.userId.sendKeys(config.login.username);
 	this.loginButton.click();
 }
+
+exports.login = login;

@@ -1,5 +1,5 @@
 'use strict';
-var fs = require('fs');
+
 var LoginPage = require('../page-objects/LoginPage');
 var config = require('../data/config.js').config();
 

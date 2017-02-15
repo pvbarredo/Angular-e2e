@@ -10,7 +10,8 @@ function config() {
 			//url : 'ca.oocl.com/njs_prs_docsop',
 			url: 'http://caqa2.oocl.com/njs_prs_docsop',
 			//url : 'http://capp.oocl.com/njs_prs_docsop'
-		}
+		},
+		jasmine_default_timeout_interval:500000
 	}
 
 }
