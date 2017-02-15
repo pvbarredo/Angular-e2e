@@ -9,6 +9,7 @@ var CelRestructurePage = function(){
 	this.searchButton = element(by.css('[ng-click="vm.searchCel()"]'));
 	this.resetButton = element(by.css('[ng-click="vm.reset()"]'));
 
+
 	var checkBoxes = [
 		'Check All',
 		'Wait for Restructure',
@@ -21,7 +22,6 @@ var CelRestructurePage = function(){
 	];
 
 	this.search = function(){
-		console.log('Search button clicked');
 		this.searchButton.click();
 	}
 
