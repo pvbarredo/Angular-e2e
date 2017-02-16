@@ -36,4 +36,8 @@ UIGridWrapper.prototype.doubleClickRow = function(rowNum){
   return browser.actions().doubleClick(button).perform();
 }
 
+UIGridWrapper.prototype.getAllRows = function(){
+  return this.gridElement.element( by.css('.ui-grid-render-container-body')).all(by.repeater('(rowRenderIndex, row) in rowContainer.renderedRows track by $index'));
+}
+
 module.exports = UIGridWrapper;
