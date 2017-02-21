@@ -3,7 +3,7 @@ var UIGridWrapper = function(gridElement){
 };
 
 UIGridWrapper.prototype.getRow = function(rowNum){
-  return this.gridElement.element(by.repeater('(rowRenderIndex, row) in rowContainer.renderedRows track by $index').row( rowNum ));
+  return this.gridElement.element(by.repeater('(rowRenderIndex, row) in rowContainer.renderedRows track by $index').row(rowNum));
 };
 
 UIGridWrapper.prototype.selectRow = function(rowNum){
@@ -36,8 +36,8 @@ UIGridWrapper.prototype.doubleClickRow = function(rowNum){
   return browser.actions().doubleClick(button).perform();
 }
 
-UIGridWrapper.prototype.getAllRows = function(){
-  return this.gridElement.element( by.css('.ui-grid-render-container-body')).all(by.repeater('(rowRenderIndex, row) in rowContainer.renderedRows track by $index'));
+UIGridWrapper.prototype.getAllRowsCount = function(){
+  return this.gridElement.element(by.css('.ui-grid-render-container-body')).all(by.repeater('(rowRenderIndex, row) in rowContainer.renderedRows track by $index')).count();
 }
 
 module.exports = UIGridWrapper;

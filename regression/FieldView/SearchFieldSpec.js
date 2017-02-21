@@ -1,9 +1,9 @@
 'use strict';
 
-var FieldViewPage = require('../page-objects/FieldViewPage'),
-	Navigation = require('../page-objects/Navigation'),
-	UIGridWrapper = require('../util/UIGridWrapper'),
-	config = require('../data/config.js').config();
+var FieldViewPage = require('../../page-objects/FieldViewPage'),
+	Navigation = require('../../page-objects/Navigation'),
+	UIGridWrapper = require('../../util/UIGridWrapper'),
+	config = require('../../data/config.js').config();
 
 describe("Search in Field Maintenance", function(){
 	var navigation = new Navigation(),
@@ -23,27 +23,28 @@ describe("Search in Field Maintenance", function(){
 
 	it('Should filter by description',function(){
 		uiGridWrapper.enterFilterInColumn(columnIdx,'Seal');
-		expect(uiGridWrapper.getAllRows().count()).toBeGreaterThan(1);
+		expect(uiGridWrapper.getAllRowsCount()).toEqual(6);
 	});
 
 	it('Should filter by section',function(){
 		uiGridWrapper.enterFilterInColumn(columnIdx,'Equipment');
-		expect(uiGridWrapper.getAllRows().count()).toBeGreaterThan(1);
+		expect(uiGridWrapper.getAllRowsCount()).toEqual(16);
 	});
 
 	it('Should filter by path',function(){
 		uiGridWrapper.enterFilterInColumn(columnIdx,'xxx');
-		expect(uiGridWrapper.getAllRows().count()).toBeGreaterThan(1);
+		browser.pause();
+		expect(uiGridWrapper.getAllRowsCount()).toBeGreaterThan(10);
 	});
 
 	it('Should filter by data type',function(){
 		uiGridWrapper.enterFilterInColumn(columnIdx,'Number');
-		expect(uiGridWrapper.getAllRows().count()).toEqual(0);
+		expect(uiGridWrapper.getAllRowsCount()).toEqual(0);
 	});
 
 	it('Should filter by status',function(){
 		uiGridWrapper.enterFilterInColumn(columnIdx,'in-active');
-		expect(uiGridWrapper.getAllRows().count()).toEqual(1);
+		expect(uiGridWrapper.getAllRowsCount()).toEqual(1);
 	});
 
 });

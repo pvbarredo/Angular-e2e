@@ -1,9 +1,9 @@
 'use strict';
 
-var FieldEditPage = require('../page-objects/FieldEditPage'),
-	FieldViewPage = require('../page-objects/FieldViewPage'),
-	Navigation = require('../page-objects/Navigation'),
-	config = require('../data/config.js').config();
+var FieldEditPage = require('../../page-objects/FieldEditPage'),
+	FieldViewPage = require('../../page-objects/FieldViewPage'),
+	Navigation = require('../../page-objects/Navigation'),
+	config = require('../../data/config.js').config();
 
 describe("Create in Field Maintenance", function(){
 	var navigation = new Navigation(),
@@ -17,23 +17,24 @@ describe("Create in Field Maintenance", function(){
 
 	it('Should open modal to create field',function(){
 		fieldViewPage.createButton.click();
+		expect(fieldEditPage.pathTextBox.getAttribute('value')).toEqual('');
 	});
 
 	it('Should input data for new field',function(){
 		fieldEditPage.module.click();
-		element(by.className('ui-select-choices-row-inner')).click();
+		fieldEditPage.moduleSelectWrapper.selectItem('DOC SOP');
 		
 		fieldEditPage.descriptionTextBox.sendKeys('Sample Description');
 		fieldEditPage.pathTextBox.sendKeys('dummy path');
 
 		fieldEditPage.section.click();
-		element(by.className('ui-select-choices-row-inner')).click();
+		fieldEditPage.sectionSelectWrapper.selectItem('Party');
 
 		fieldEditPage.dataType.click();
-		element(by.className('ui-select-choices-row-inner')).click();
+		fieldEditPage.dataTypeSelectWrapper.selectItem('Number');
 
 		fieldEditPage.status.click();
-		element(by.className('ui-select-choices-row-inner')).click();
+		fieldEditPage.statusSelectWrapper.selectItem('in-active');
 
 		fieldEditPage.addOptValueButton.click();
 		fieldEditPage.optValue.sendKeys('Sample Option Value');

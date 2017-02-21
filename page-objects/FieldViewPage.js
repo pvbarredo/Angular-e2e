@@ -5,6 +5,7 @@ var fieldViewPage = function(){
 	this.selectedModule = element(by.className('ui-select-choices-row-inner'));
 	this.createButton = element(by.css('[ng-click="vm.addField()"]'));
 	this.removeButton = element(by.css('[ng-click="vm.removeField()"]'));
+	this.confirmUtilButton = element(by.id('confirmDialog'));
 	this.searchFields = function(){
 		this.searchFieldsButton = element(by.css('[ng-click="vm.searchFields()"]'));
 		this.searchFieldsButton.click();
