@@ -5,6 +5,7 @@ exports.config = {
 		// 'regression/GuideView/SearchGuideSpec.js'
 		'regression/FieldView/CreateFieldSpec.js',
 		// 'regression/DeleteFieldSpec.js'
+		'regression/TypeView/CreateDecisionSpec.js'
 	],
 	capabilities: {
 		'browserName': 'firefox'
