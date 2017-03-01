@@ -25,9 +25,6 @@ var CelRestructurePage = function(){
 		this.searchButton.click();
 	}
 
-
-
-
 }
 
 module.exports = CelRestructurePage;

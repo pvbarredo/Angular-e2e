@@ -1,0 +1,1 @@
+Should only have 1 page object. combine the two page object

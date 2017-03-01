@@ -1,10 +1,9 @@
 'use strict';
 
-var LoginPage = require('../page-objects/LoginPage');
-var config = require('../data/config.js').config();
+var LoginPage = require('./LoginPage.po');
 
 describe("Login into DOCSOP", function() {
-	var loginPage = new LoginPage(config);
+	var loginPage = new LoginPage(browser.params);
 
 	it("Check Title", function() {
 		loginPage.login();
